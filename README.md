@@ -16,7 +16,12 @@
 
 <br>
 
-### 
 
-<img src="https://user-images.githubusercontent.com/58925328/88886822-3b3c4180-d276-11ea-92f3-696268de281c.png" width=45% style="display:inline-block"><img src="https://user-images.githubusercontent.com/58925328/88886818-3a0b1480-d276-11ea-8972-aca110a34a99.png" width=45% style="display:inline-block">
 
+회원가입 후 로그인하여 사용할 수 있습니다. 
+
+<img src="https://user-images.githubusercontent.com/58925328/88886818-3a0b1480-d276-11ea-8972-aca110a34a99.png" width=60% style="display:inline-block">
+
+마이페이지에서 예약내역을 확인할 수 있고, 오늘 예약한 구두수선소의 위치를 보여줍니다.
+
+<img src="https://user-images.githubusercontent.com/58925328/88886822-3b3c4180-d276-11ea-92f3-696268de281c.png" width=60% style="display:inline-block">
