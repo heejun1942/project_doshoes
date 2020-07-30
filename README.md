@@ -16,12 +16,27 @@
 
 <br>
 
+## 2. 상세설명
+
+1) 자신의 현재 위치 기반 가까운 구두수선소 9곳을 보여줍니다.
+
+<img src="https://user-images.githubusercontent.com/58925328/88889131-996b2380-d27a-11ea-9d70-7cf9616e5d01.png" width=60% style="display:inline-block">
 
 
-회원가입 후 로그인하여 사용할 수 있습니다. 
+
+2) 회원가입 후 로그인하여 사용할 수 있습니다. 
 
 <img src="https://user-images.githubusercontent.com/58925328/88886818-3a0b1480-d276-11ea-8972-aca110a34a99.png" width=60% style="display:inline-block">
 
-마이페이지에서 예약내역을 확인할 수 있고, 오늘 예약한 구두수선소의 위치를 보여줍니다.
+
+
+3) 원하는 시간과 서비스를 선택 후 예약버튼을 누릅니다.
+
+<img src="https://user-images.githubusercontent.com/58925328/88889138-9cfeaa80-d27a-11ea-88f9-b2308fce1659.JPG" width=60% style="display:inline-block">
+
+
+
+4) 마이페이지에서 예약내역을 확인할 수 있고, 오늘 예약한 구두수선소의 위치를 보여줍니다.
 
 <img src="https://user-images.githubusercontent.com/58925328/88886822-3b3c4180-d276-11ea-92f3-696268de281c.png" width=60% style="display:inline-block">
+
