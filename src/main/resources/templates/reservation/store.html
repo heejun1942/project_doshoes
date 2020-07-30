@@ -1,0 +1,155 @@
+<body>
+	<form method="post" action="/reservation/post">
+
+		<input type="text" name="storeCode" th:value="${storeCode}" readonly
+			style="display: none">
+
+		<div id="btnBox" style="width: 100%; margin: 0 auto;">
+			<div id="btnHead">
+				<i class="far fa-clock"></i> <span>TIME</span>
+			</div>
+			<hr>
+
+			<div id="timeBox">
+
+				<div>
+					<label for="time8"><input type="radio" name="bookingTime"
+						value="8" id="time8"
+						th:attr="disabled=(${#lists.contains(booking,8)} or ${nowHour}>=8? true :false)"><span>8:00</span></label>
+					<label for="time9"><input type="radio" name="bookingTime"
+						value="9" id="time9"
+						th:attr="disabled= (${#lists.contains(booking,9)} or ${nowHour}>=9? true :false)"><span>9:00</span></label>
+					<label for="time10"><input type="radio" name="bookingTime"
+						value="10" id="time10"
+						th:attr="disabled= (${#lists.contains(booking,10)} or ${nowHour}>=10? true :false)"><span>10:00</span></label>
+					<label for="time11"><input type="radio" name="bookingTime"
+						value="11" id="time11"
+						th:attr="disabled= (${#lists.contains(booking,11)} or ${nowHour}>=11? true :false)"><span>11:00</span></label>
+
+					<label for="time12"><input type="radio" name="bookingTime"
+						value="12" id="time12"
+						th:attr="disabled=(${#lists.contains(booking,12)} or ${nowHour}>=12? true :false)"><span>12:00</span></label>
+					<label for="time13"><input type="radio" name="bookingTime"
+						value="13" id="time13"
+						th:attr="disabled= (${#lists.contains(booking,13)} or ${nowHour}>=13? true :false)"><span>13:00</span></label>
+					<label for="time14"><input type="radio" name="bookingTime"
+						value="14" id="time14"
+						th:attr="disabled= (${#lists.contains(booking,14)} or ${nowHour}>=14? true :false)"><span>14:00</span></label>
+					<label for="time15"><input type="radio" name="bookingTime"
+						value="15" id="time15"
+						th:attr="disabled= (${#lists.contains(booking,15)} or ${nowHour}>=15? true :false)"><span>15:00</span></label>
+
+					<label for="time16"><input type="radio" name="bookingTime"
+						value="16" id="time16"
+						th:attr="disabled= (${#lists.contains(booking,16)} or ${nowHour}>=16? true :false)"><span>16:00</span></label>
+					<label for="time17"><input type="radio" name="bookingTime"
+						value="17" id="time17"
+						th:attr="disabled= (${#lists.contains(booking,17)} or ${nowHour}>=17? true :false)"><span>17:00</span></label>
+					<label for="time18"><input type="radio" name="bookingTime"
+						value="18" id="time18"
+						th:attr="disabled= (${#lists.contains(booking,18)} or ${nowHour}>=18? true :false)"><span>18:00</span></label>
+					<label for="time19"><input type="radio" name="bookingTime"
+						value="19" id="time19"
+						th:attr="disabled= (${#lists.contains(booking,19)} or ${nowHour}>=19? true :false)"><span>19:00</span></label>
+				</div>
+			</div>
+
+		</div>
+
+		<div>
+			<div id="menuHead">
+				<i class="fas fa-shoe-prints"></i> <span>MENU</span>
+			</div>
+			<hr>
+			<ul class="nav nav-tabs">
+				<button
+					class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold menuTab"
+					type="button" data-toggle="collapse" data-target="#menu1"
+					aria-expanded="false">
+					shoes <i class="fas fa-male"></i>
+				</button>
+
+				<button
+					class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold menuTab"
+					type="button" data-toggle="collapse" data-target="#menu2"
+					aria-expanded="false">
+					heels <i class="fas fa-female"></i>
+				</button>
+			</ul>
+
+
+			<div id="menu1" class="collapse">
+				<label> <input type="checkbox" name="bookingMenu"
+					value="구두 광택 "> <span> 구두&emsp;광택</span><span class="price">
+						4,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="부츠 광택 "> <span> 부츠&emsp;광택</span><span class="price">
+						6,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="앞보 조창 "> <span> 앞보&emsp;조창 </span><span
+					class="price"> 13,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="뒷통굽갈이 "> <span> 뒷통굽갈이</span><span class="price">
+						18,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="구두볼늘림 "> <span> 구두볼늘림 </span><span class="price">
+						5,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="뒷 보조굽 "> <span> 뒷&emsp;보조굽 </span><span
+					class="price"> 13,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="반 달 굽 "> <span> 반&emsp;달&emsp;굽 </span><span
+					class="price"> 3,000원 </span>
+				</label> <br>
+			</div>
+			<div id="menu2" class="collapse">
+				<label> <input type="checkbox" name="bookingMenu"
+					value="뒷 굽 (소) "> <span> 뒷&emsp;굽&emsp;(소) </span><span
+					class="price"> 3,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="뒷 굽 (중) "> <span> 뒷&emsp;굽&emsp;(중) </span><span
+					class="price"> 5,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="뒷 굽 (대) "> <span> 뒷&emsp;굽&emsp;(대) </span><span
+					class="price"> 7,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="앞 보조창 "> <span> 앞&emsp;&emsp;보조창</span><span
+					class="price"> 10,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="뒷 통굽갈이 "> <span> 뒷&emsp;통굽갈이 </span><span
+					class="price"> 13,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="뒷특수굽갈이 "> <span> 뒷특수굽갈이 </span><span class="price">
+						20,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="사 각 창 "> <span> 사&emsp;&ensp;각&emsp;&ensp;창 </span><span
+					class="price"> 15,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="보 조 창 "> <span> 보&emsp;&ensp;조&ensp;&emsp;창</span><span
+					class="price"> 13,000원 </span>
+				</label> <br> <label> <input type="checkbox" name="bookingMenu"
+					value="염 색 "> <span> 염&emsp;&emsp;&emsp;&emsp;색 </span><span
+					class="price"> 25,000원 </span>
+				</label> <br>
+			</div>
+		</div>
+		<input id="submitBtn" class="btn-xs" type="button" value="예약"
+			onclick="run()">
+	</form>
+
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		function run() {
+			console.log($("input[type=radio]:checked").val());
+			if ($("input[type=radio]:checked").val() == undefined) {
+				alert("예약시간을 선택해주세요.");
+			} else if ($("input[type=checkbox]:checked").val() == undefined) {
+				alert("예약 내용을 선택해주세요.");
+			} else {
+				$("form").submit();
+			}
+
+			return false;
+		}
+	</script>
+</body>

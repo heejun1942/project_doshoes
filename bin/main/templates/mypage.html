@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="common/head">
+</head>
+<body id="page-top">
+	<!-- Navigation -->
+	<nav th:replace="common/nav"></nav>
+
+	<section>
+		<div class="jumbotron signDiv">
+			<div class="container">
+
+				<div id=reservation_content>
+				<p class="divHeader">예약내역</p>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>예약 번호</th>
+								<th>수선소 지점 번호</th>
+								<th>예약 날짜</th>
+								<th>예약 시간</th>
+								<th>예약 내역</th>
+								<th>사용자 계정</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="booking : ${bookingList}">
+								<td th:text="${booking.id}"></td>
+								<td th:text="${booking.storeCode}"></td>
+								<td th:text="${booking.day}"></td>
+								<td th:text="${booking.time}"></td>
+								<td th:text="${booking.bookingMenu}"></td>
+								<td th:text="${booking.userId}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				<!-- kakao 지도 -->
+				<p class="divHeader" >위치</p>
+				<hr>
+				<div id="map" style="width: 80%; height: 350px; margin: 0 auto;"></div>
+
+			</div>
+		</div>
+
+	</section>
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-to-top d-lg-none position-fixed ">
+		<a class="js-scroll-trigger d-block text-center text-white rounded"
+			href="#page-top"> <i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+
+	<!-- Footer -->
+	<footer th:replace="common/footer"> </footer>
+</body>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+<!-- Custom scripts for this template -->
+<script src="js/freelancer.min.js"></script>
+<script
+	src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=51df918843905cae9b7b7d07b977da49"></script>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+	navigator.geolocation
+			.getCurrentPosition(function(pos) {
+				latitude = pos.coords.latitude;
+				longitude = pos.coords.longitude;
+
+				var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+				mapOption = {
+					center : new kakao.maps.LatLng(latitude, longitude), // 지도의 중심좌표
+					level : 3
+				// 지도의 확대 레벨
+				};
+				var map = new kakao.maps.Map(mapContainer, mapOption);
+				// 마커가 표시될 위치입니다 
+				var markerPosition = new kakao.maps.LatLng(latitude, longitude);
+				// 마커를 생성합니다
+				var marker = new kakao.maps.Marker({
+					position : markerPosition
+				});
+				// 마커가 지도 위에 표시되도록 설정합니다
+				marker.setMap(map);
+				var iwContent = '<div style="padding:5px;">현재 위치입니다. <br><a href="https://map.kakao.com/link/to/Hello World!,'
+						+ latitude
+						+ ','
+						+ longitude
+						+ '" style="color:blue" target="_blank">길찾기</a></div>' // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+				iwPosition = new kakao.maps.LatLng(latitude, longitude); //인포윈도우 표시 위치입니다
+				// 인포윈도우를 생성합니다
+				var infowindow = new kakao.maps.InfoWindow({
+					position : iwPosition,
+					content : iwContent
+				});
+				// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+				infowindow.open(map, marker);
+			});//navigator 자기위치 결정해주는 APi 괄호
+</script>
+<script>
+$.ajax({
+	url : '/map/getPoint',
+	type : 'GET',
+	data : {
+		"latitude" : latitude,
+		"longitude" : longitude
+	},
+	success : function(res) {
+		var html = "";
+		var shtml = "";
+		for (var i = 0; i < res.length; i++) {
+			var marker = new kakao.maps.Marker({
+				map : map,
+				position : new kakao.maps.LatLng(
+						res[i].latitude,
+						res[i].longitude),
+				title : res[i].title,
+			});
+		}
+</script>
+</html>

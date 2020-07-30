@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Map</title>
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container text-center">
+			<div id="map" style="width: 500px; height: 400px; margin: 0 auto;"></div>
+		</div>
+	</div>
+
+	<script
+		src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=51df918843905cae9b7b7d07b977da49"></script>
+
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>
+		navigator.geolocation
+				.getCurrentPosition(function(pos) {
+					latitude = pos.coords.latitude;
+					longitude = pos.coords.longitude;
+					alert(" your location : " + latitude + ", " + longitude);
+
+					var container = document.getElementById('map');
+					var options = {
+						center : new kakao.maps.LatLng(latitude, longitude), // 강남역 37.4980239, 127.027572
+						level : 4
+					};
+					var map = new kakao.maps.Map(container, options);
+					var markerPosition = new kakao.maps.LatLng(latitude,
+							longitude);
+					var marker = new kakao.maps.Marker({
+						position : markerPosition
+					});
+					marker.setMap(map);
+
+					$
+							.ajax({
+								url : '/map/getPoint',
+								type : 'GET',
+								data : {
+									"latitude" : latitude,
+									"longitude" : longitude
+								},
+								success : function(res) {
+									for (var i = 0; i < res.length; i++) {
+										var marker = new kakao.maps.Marker({
+											map : map, // 마커를 표시할 지도
+											position : new kakao.maps.LatLng(
+													res[i].latitude,
+													res[i].longitude),
+											title : res[i].title,
+										});
+									}
+
+//									html += '<div class="col-md-6 col-lg-4">'
+	//								html += '<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">'
+		//							html += '<div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+			//						html += '<div class="portfolio-item-caption-content text-center text-white">'
+				//					html += '<i class="fas fa-plus fa-3x"></i>'
+					//				html += '</div>'
+						//			html += '</div>'
+							//		html += '<img class="img-fluid" src="img/portfolio/cabin.png" alt="">'
+								//	html += '</div>'
+									//html += '</div>''
+
+								}
+							});//ajax
+				});//navigator 자기위치 결정해주는 APi 괄호
+	</script>
+
+</body>
+</html>

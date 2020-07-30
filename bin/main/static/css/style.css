@@ -1,0 +1,187 @@
+/*-----store.html---- */
+
+.imgText{
+	font-size:1.1em;
+}
+.googleFont {
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+body {
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#btnBox {
+	height: 13em;
+	width: 20.8em;
+}
+
+#btnBox label span {
+	display: inline-block;
+	border: 1px solid #8bb4b5;
+	width: 4.8em;
+	padding: 0.42em 0;
+	margin: 0.2em 0;
+	text-align: center;
+	background-color: #e1eded;
+}
+
+#btnBox input[type=radio] {
+	display: none;
+}
+
+#btnBox input[type='radio']:checked+span {
+	background-color: #1ABC9C;
+	color: white;
+}
+
+#btnBox input[type='radio']:disabled+span {
+	border: 1px solid #d6d4d4;
+	color: lightgray;
+	background: #f8f8f8;
+}
+
+#btnHead, #menuHead{
+	font-size: 1.3em;
+}
+
+#menu1 {
+	text-align: left;
+
+}
+
+#menu2 {
+	text-align: left;
+}
+
+#btnBox p {
+	margin-bottom: 0;
+	
+}
+
+#menu1 {
+	float: left;
+	width: 40%;
+}
+#menu2 {	
+	float: right;
+	width: 40%
+}
+
+#menu1 label{
+	margin-left:20%;
+	width: 100%
+}
+
+#menu2 label{
+	margin-right: 20%;
+	width:100%
+}
+
+#submitBtn{
+	height: 2.3em;
+	width: 100%;
+	padding: 0.4em 0;
+	background: #2c3e50;
+	color: white;
+	border: 0;
+	font-size: 1em;
+	cursor: pointer;
+	margin-top: 2em;
+	margin-bottom: 6em;
+}
+
+.menuTab {
+	width: 47%;
+	color: black;
+	margin-left: 10px;
+	border-Radius:0;
+	background-color: #DFE3E7;
+	font-size:0.9em;
+}
+
+.price{
+	padding-left: 1em;
+}
+
+#timeBox{
+	text-align: left;
+}
+
+@media ( max-width: 1200px ) {
+  .price { display: block; }
+  #timeBox{ text-align: center; }
+  #btnBox{ height: 18em; }
+}
+
+
+
+/*----mypage.html---- */
+
+.divHeader{
+	font-size: 1.5em;
+	font-weight: 600;
+	color: #2c3e50;
+	padding-left: 0.5em;
+	margin-bottom:7px;
+	text-align: left;
+}
+
+#reservation_content{
+	margin-bottom: 7em
+}
+
+hr {
+	margin-top: 0;
+}
+
+
+
+
+
+/*---signin.html ----*/
+.signForm{
+	max-width: 600px;
+	margin:auto;
+}
+
+.signForm button{
+	margin-top:70px;
+}
+
+.signDiv {
+	min-height: 45em;
+	margin-bottom:0;
+	padding-top:140px;
+}
+
+.signForm label {
+	display:flex;
+	padding-left:10px;
+}
+
+/*-----board.html-----*/
+.boardBtn{
+	width: 5.5em;
+	float:right;
+	margin-left:0.5em;
+}
+
+.boardDiv{
+	min-height: 20em;
+}
+
+.boardForm{
+	max-width: 800px;
+	margin:auto;
+}
+
+.boardH {
+	font-size: 1.5em;
+	float:left;
+	padding-left:0.5em;
+}
+
+.writeText{
+	min-height: 330px;
+}

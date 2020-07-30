@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="common/head">
+</head>
+<body id="page-top">
+	<!-- Navigation -->
+	<nav th:replace="common/nav"></nav>
+	<div class="jumbotron signDiv">
+		<div class="container text-center">
+			<form class="signForm" method="post" action="/signup">
+				<h2>회원가입</h2>
+				<br></br>
+				<div class="form-group">
+					<label for="email">이메일</label> <input type="text"
+						class="form-control" id="email" name="email">
+				</div>
+				<div class="form-group">
+					<label for="pwd">비밀번호</label> <input type="password"
+						class="form-control" id="pwd" name="pwd" onkeypress="caps_lock(event)">
+
+						<p id="capslock"
+							style="position: relative; border: 2px solid #003b83; width: 300px; bottom: 0px; display: none">
+							&nbsp;<b>CapsLock</b> 키가 눌려있습니다.&nbsp;
+						</p>
+					</div>
+				<div class="form-group">
+					<label for="name">Name:</label> <input type="text"
+						class="form-control" id="name" name="name">
+				</div>
+				<button class="btn btn-primary btn-block" id="signup">회원가입</button>
+			</form>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer th:replace="common/footer"> </footer>
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-to-top d-lg-none position-fixed ">
+		<a class="js-scroll-trigger d-block text-center text-white rounded"
+			href="#page-top"> <i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<!-- Contact Form JavaScript -->
+	<script src="js/jqBootstrapValidation.js"></script>
+	<script src="js/contact_me.js"></script>
+	<!-- Custom scripts for this template -->
+	<script src="js/freelancer.min.js"></script>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script>
+		$("#signup").click(function() {
+			$("form").submit();
+			return false;
+		});
+	</script>
+	<script type="text/javascript">
+		function caps_lock(e) {
+			var keyCode = 0;
+			var shiftKey = false;
+			keyCode = e.keyCode;
+			shiftKey = e.shiftKey;
+			if (((keyCode >= 65 && keyCode <= 90) && !shiftKey)
+					|| ((keyCode >= 97 && keyCode <= 122) && shiftKey)) {
+				show_caps_lock();
+				setTimeout("hide_caps_lock()", 3500);
+			} else {
+				hide_caps_lock();
+			}
+		}
+
+		function show_caps_lock() {
+			$("#capslock").show();
+		}
+
+		function hide_caps_lock() {
+			$("#capslock").hide();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head th:replace="./common/head">
+</head>
+<body id="page-top">
+	<!-- Navigation -->
+	<nav th:replace="./common/nav"></nav>
+
+	<section>
+		<div class="jumbotron signDiv">
+			<div class="container text-center boardDiv">
+				<form class="boardForm" method="post" action="/board/write">
+					<div class="form-group">
+						<label class="boardH" for="title">제 목</label> <input type="text"
+							class="form-control" name="title" id="title">
+					</div>
+					<div class="form-group">
+						<label class="boardH" for="content">내 용</label>
+						<textarea class="form-control writeText" rows="5" name="content"
+							id="content">
+ </textarea>
+					</div>
+					<button type="button" id="complete"
+						class="btn btn-primary btn-block boardBtn">글 쓰 기</button>
+				</form>
+			</div>
+		</div>
+
+		<br>
+	</section>
+	<footer th:replace="./common/footer"> </footer>
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-to-top d-lg-none position-fixed ">
+		<a class="js-scroll-trigger d-block text-center text-white rounded"
+			href="#page-top"> <i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+</body>
+<!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="/js/jqBootstrapValidation.js"></script>
+<script src="/js/contact_me.js"></script>
+<!-- Custom scripts for this template -->
+<script src="/js/freelancer.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+	$("#complete").click(function() {
+		alert('작성을 완료하였습니다.');
+		$("form").submit();
+		return false;
+	});
+</script>
+</html>
